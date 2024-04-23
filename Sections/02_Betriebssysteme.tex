@@ -1,1 +1,12 @@
 \section{Betriebssysteme}
+\subsection{Bare-Metal}
+Das Anwender-Programm greift direkt über physikalische Kanäle auf die reale Maschine zu, ist eng mit der realen Maschine gekoppelt und ein einzelner Infinite-Loop (Superloop).
+
+Vorteile: Einfache struktur, nur ein Stack.
+Nachteil: Nur schwer Skalierbar
+
+\subsection{Embedded OS}
+Das Betriebssystem bildet eine klare Abstraktionsschicht für den Zugriff auf die reale Maschine und entkoppelt die reale Maschine vom Anwender-Programm. Zudem bietet Anwender-Programm über logische Kanäle zusätzliche Funktionen und Dienste an.
+
+\subsection{RTOS Kernel}
+
