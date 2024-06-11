@@ -23,6 +23,22 @@ Bei einem CPC (Cyber Physical System):
 
 Das Betriebssystem im Schichtenmodell des Computersystems bietet der Anwendung API-Schnittstellen zur darunterliegenden realen Maschine und macht die Anwendung damit weitgehend unabhängig von der realen Maschine (CPU, Hardware, Peripherien,...).
 
+\subsection{Entwicklungsprozess}
+
+Unterschiedliche Möglichkeiten wie V-Modell und DevOps Lyfecycle (Loop).
+
+\includegraphics[width=\linewidth]{"Images/UML-Diagram-types-1.png"}
+
 \subsection{Mikrocontroller-Organisation}
 
 \includegraphics[width=\linewidth]{"Images/MikrocontrollerOrganisation.png"}
+
+\subsubsection{System Komponenten}
+
+\begin{itemize}
+	\itemsep-.5em 
+	\item \textit{NVIC}: Nested Vectored Interrupt Controller, provides configurable interrupt handling abilities to the processor.
+	\item \textit{SYSTICK}: System timer, 24-bit down-counter, automatic reload.
+	\item \textit{MPU}: Memory Protection Unit, Zugriffsregeln für Privileged Access und User Program Access, wirft Exceptions.
+	\item \textit{FPU}: Floating Point Unit, erweiterter Befehlssatz auf DSP.
+\end{itemize}
