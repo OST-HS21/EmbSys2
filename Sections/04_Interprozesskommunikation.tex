@@ -6,7 +6,7 @@ Semaphor ist ein Signalisierungsmechanismus (signaling mechanism), bestehend aus
 
 Binäre Semaphore:
 
-\includegraphics[width=\linewidth]{Binary_Semaphore.png}
+\includegraphics[width=.9\linewidth]{Binary_Semaphore.png}
 
 Counting Semaphore:
 
@@ -14,7 +14,7 @@ Counting Semaphore:
 
 \subsection{Mutual Exclusion (Mutex) Semaphore}
 
-Mutex ist ein Sperrmechanismus (locking mechanism), welcher den Wert 0 und 1 annehmen kann.
+Die Mutex ist ein Sperrmechanismus (locking mechanism), welcher den Wert 0 und 1 annehmen kann.
 Key words: Ownership, Recursive Locking, Task Deletion Safety, Priority Inversion Avoidance.
 Recursive mutexes can be locked and unlocked multiple times by the task that owns them.
 
@@ -30,3 +30,65 @@ Siehe auch Abschnitt \ref{sec:semaphore_api}.
 \end{center}
 
 
+\subsection{Message Queues}
+
+Eine Message Queue ist ein Buffer mit dem Tasks und ISR's Nachrichten austauschen und mit einander Kommuniziern können.
+
+\subsubsection{Queue Control Block (QCB)}
+
+\includegraphics[width=\linewidth]{queue_control_block.png}
+
+Senden:
+
+\includegraphics[width=\linewidth]{message_passing_senden.png}
+
+Empfangen:
+
+\includegraphics[width=\linewidth]{message_passing_empfangen.png}
+
+Zustandsdiagramm:
+
+\includegraphics[width=\linewidth]{message_queue_zustandsdiagramm.png}
+
+Unterschiedliche Kommunikationsmodelle möglich, wie One-Way Non-Interlocking und Interlocked, Two-Way Interlocked, Client-Server und Broadcast / Publish-Subscribe.
+
+
+\subsubsection{Queue Set}
+
+Queue Set ermöglicht einem RTOS Task simultan zu blockieren (pend) beim Lesezugriff auf
+mehrere RTOS Queues und/oder Semaphore (block on set, not on individual object).
+Siehe auch Abschnitt \ref{sec:message_queue}.
+
+
+\subsubsection{Signals}
+
+Ein Signal is ein Software-Interrupt welcher beim Signal-empfangenden Task einen asynchronen ablauf triggert / auslöst.
+Signals can be ignored, made pending, processed (handled), or blocked.
+
+Der \textbf{Singla Control Block} beinhaltet ein set der Signale, welche vom Task behandelt werden können.
+
+In FreeRTOS sind Signale als \textit{Task Notifications} implementiert.
+
+
+\subsubsection{Event Register, Event Groups}
+
+Über das Event Register kann ein Task das Vorhandensein bestimmter Events prüfen,
+die Einfluss auf dessen Ausführung haben können.
+Eine externe Quelle, z.B. ein anderer Task oder ein ISR kann Bits im Event Register setzen,
+um den Task zu informieren, dass ein bestimmter Event eingetreten ist.
+Der \textbf{Event Register Control Block} ist ein Teil des \textbf{Task Control Blocks} (TCB).
+
+In FreeRTOS is eine Event Group eine Menge von Event-Bits.
+Einzelne Event-Bits innerhalb einer Event Group werden durch eine Bit-Nummer referenziert.
+
+\includegraphics[width=\linewidth]{EventGroup.png}
+
+\subsubsection{Pipes}
+
+Pipes sind Kernel Objekte welche einen unstrukturierten Datenaustausch und Synchronisation zwischen den tasks ermöglicht.
+Es können Mehrer Tasks in die pipe schreiben und auch mehrere daraus Lesen.
+Pipes werden dynamisch erzeugt und gelöscht, wobei vom Kernel ein Pipe Control Block und zwei waiting lists zugewiesen werden.
+
+\includegraphics[width=\linewidth]{pipe_overview.png}
+
+In FreeRTOS sind Pipes so nicht direkt vorhanden, alternativen sind Queues, Stream Buffers und Message Buffers.
