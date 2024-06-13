@@ -12,8 +12,8 @@ void vAFunction(void)
     xSemaphoreTake(xSemaphore, 0); /* Take the semaphore, so it starts empty. A block time of zero can be
                        used as the semaphore is guaranteed to be available - it has just been created. */
 
-    xQueueSet = xQueueCreateSet(10); /* Create a queue set large enough to hold an event for every space in
-                                        every queue and semaphore that is to be added to the set. */
+    xQueueSet = xQueueCreateSet(10); /* Create a queue set large enough to hold an event for every space
+                                        in every queue and semaphore that is to be added to the set. */
 
     xQueueAddToSet(xQueue1, xQueueSet); // Add the queues and semaphores to the set.
     xQueueAddToSet(xQueue2, xQueueSet);

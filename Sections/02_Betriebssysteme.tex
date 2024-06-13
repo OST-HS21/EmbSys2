@@ -1,6 +1,9 @@
 \section{Betriebssysteme}
+
 \subsection{Bare-Metal}
-Das Anwender-Programm greift direkt über physikalische Kanäle auf die reale Maschine zu, ist eng mit der realen Maschine gekoppelt und ein einzelner Infinite-Loop (Superloop).
+
+Das Anwender-Programm greift direkt über physikalische Kanäle auf die reale Maschine zu,
+ist eng mit der realen Maschine gekoppelt und ein einzelner Infinite-Loop (Superloop).
 
 Vorteile: Einfache struktur, nur ein Stack.
 Nachteil: Nur schwer Skalierbar
@@ -54,21 +57,6 @@ erstellen können (z.B. für IPC, Synchronisation). z.B. Tasks, Semaphores, Mess
 
 
 \section{FreeRTOS}
-
-\subsection{Tasks und Scheduling}
-
-\begin{center}
-	\includegraphics[width=.8\linewidth]{quasi_parallel_mehrprozessor.png}
-\end{center}
-
-Sehr aufwändig. Multiprocessing, Multithreading.
-
-\begin{center}
-	\includegraphics[width=.8\linewidth]{quasi_parallel_mehrprozessor.png}
-\end{center}
-
-Multitasking.
-
 \subsection{Parallele Prozesse}
 \subsubsection{Prozessmodell vs. Threadmodell}
 Das Threadmodell ist typisch bei eingebetteten Systemen (Embedded OS, RTOS). Unterscheiden bei den Kontextgruppen.
