@@ -64,12 +64,6 @@ Cache Grösse: \formula{$n \cdot 2^{k+i}$}
 Anzahl Zeilen: \formula{$2^k$}\\
 $n$ Blöcke à Zeilen-Grösse: \formula{$2^i$}
 
-\subsection{Performance}
-
-\formula{$\mathit{Memory\, stall\, cycles} = \mathit{Number\, of\, misses} \cdot \mathit{Miss\, penalty}$}
-\formula{$= \mathit{IC} \cdot \dfrac{\mathit{Misses}}{Instructions} \cdot \mathit{Miss\, penalty} $}
-\formula{$= \mathit{IC} \cdot \dfrac{\mathit{Memory\, accesses}}{Instructions} \cdot \mathit{Miss\, rate} \cdot \mathit{Miss\, penalty} $}
-
 \subsection{Ersetzungsstrategien}
 
 \begin{itemize}
@@ -86,6 +80,10 @@ $n$ Blöcke à Zeilen-Grösse: \formula{$2^i$}
 \end{center}
 
 \subsection{Schreiben}
+
+\begin{center}
+    \includegraphics[width=\linewidth]{Cache_Schreiben.png}
+\end{center}
 
 \subsubsection{Write Through (Store Through)}
 
@@ -113,6 +111,18 @@ Typische Kombinationen:
     \item Write Through Cache mit No-Write Allocate
 \end{itemize}
 
+\subsection{Performance}
+
+\formula{$\mathit{Memory\, stall\, cycles} = \mathit{Number\, of\, misses} \cdot \mathit{Miss\, penalty}$}
+\formula{$= \mathit{IC} \cdot \dfrac{\mathit{Misses}}{Instructions} \cdot \mathit{Miss\, penalty} $}
+\formula{$= \mathit{IC} \cdot \dfrac{\mathit{Memory\, accesses}}{Instructions} \cdot \mathit{Miss\, rate} \cdot \mathit{Miss\, penalty} $}
+
+\formula{$T_{eff} = T_{Hit} + r_{Miss} \cdot A_{Miss}$}
+
+\unitText{$T_{eff}$}{Durchschnittliche Zugriffszeit}{s, Clocks}\\
+\unitText{$T_{Hit}$}{Cache zugriffszeit}{s, Clocks}\\
+\unitText{$r_{Miss}$}{Miss-Rate im Cache}{\%}\\
+\unitText{$A_{Miss}$}{Zusätzlicher Zeitaufwand bei Nichttreffer}{s, Clocks}
 
 \subsection{Cache-Friendly Code}
 
