@@ -117,12 +117,24 @@ Typische Kombinationen:
 \formula{$= \mathit{IC} \cdot \dfrac{\mathit{Misses}}{Instructions} \cdot \mathit{Miss\, penalty} $}
 \formula{$= \mathit{IC} \cdot \dfrac{\mathit{Memory\, accesses}}{Instructions} \cdot \mathit{Miss\, rate} \cdot \mathit{Miss\, penalty} $}
 
+\subsubsection{Leistungssteigerung durch Cache-Einsatz}
+
 \formula{$T_{eff} = T_{Hit} + r_{Miss} \cdot A_{Miss}$}
 
 \unitText{$T_{eff}$}{Durchschnittliche Zugriffszeit}{s, Clocks}\\
-\unitText{$T_{Hit}$}{Cache zugriffszeit}{s, Clocks}\\
+\unitText{$T_{Hit}$}{Cache Zugriffszeit}{s, Clocks}\\
 \unitText{$r_{Miss}$}{Miss-Rate im Cache}{\%}\\
 \unitText{$A_{Miss}$}{Zusätzlicher Zeitaufwand bei Nichttreffer}{s, Clocks}
+
+\subsubsection{Leistungssteigerung mit einem L2-Cache}
+
+\formula{$T_{eff} = T_{Hit_L1} + r_{Miss_L1} \cdot ( T_{Hit_L2} + r_{Miss_L2} \cdot A_{Miss_l2} )$}
+
+\begin{center}
+	\includegraphics[height=4cm]{LeistungssteigerungCache.png}
+	\includegraphics[height=4cm]{LeistungssteigerungL2Cache.png}
+\end{center}
+
 
 \subsection{Cache-Friendly Code}
 
