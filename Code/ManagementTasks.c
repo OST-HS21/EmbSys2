@@ -19,7 +19,6 @@ static void prvTask1(void *pvParameters) {
      xLastWakeTime = xTaskGetTickCount();
     while(1) {
         vTaskDelayUntil(&xLastWakeTime, taskCycleTime); // Wait for the next cycle
-
         // Do something inside the task, do not leave this loop
     }
 }
@@ -28,7 +27,6 @@ static void prvTask1(void *pvParameters) {
 static void prvTask2(void *pvParameters) {
     while(1) {
         // Do something inside the task, do not leave this loop
-
         vTaskDelay(20); //Enter the Blocked state for 20 tick interrupts, wait for the next cycle
     }
 }
@@ -36,6 +34,5 @@ static void prvTask2(void *pvParameters) {
 /* Task 3, Aperiodic */
 static void prvTask3(void *pvParameters) {
     // Do something inside the task ...
-
     vTaskDelete(xTask3); // Delete this task by valid handle to itself
 }
