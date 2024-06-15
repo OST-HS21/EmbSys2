@@ -124,6 +124,20 @@ Typische Kombinationen:
 \unitText{$r_{Miss}$}{Miss-Rate im Cache}{\%}\\
 \unitText{$A_{Miss}$}{Zusätzlicher Zeitaufwand bei Nichttreffer}{s, Clocks}
 
+\subsection{Cache-Kohärenz}
+
+Das Problem der Cache-Kohärenz kann auf verschiedene Arten gelöst werden:
+
+\begin{itemize}
+    \itemsep-.5em 
+    \item Gemeinsame Daten werden nicht über den Cache geführt.
+    \item Alle Caches arbeiten nach der Write Through-Strategie.
+    \item Für alle Cache-Strategien ist die Anwendung eines Kohärenzprotokolls möglich.
+\end{itemize}
+
+\includegraphics[width=\linewidth]{MESI_Kohaerenz_Protokoll.jpg}
+
+
 \subsection{Cache-Friendly Code}
 
 \includegraphics[width=\linewidth]{cache_friendly_code_2.png}
