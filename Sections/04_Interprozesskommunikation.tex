@@ -18,9 +18,6 @@ Die Mutex ist ein Sperrmechanismus (locking mechanism), welcher den Wert 0 und 1
 Key words: Ownership, Recursive Locking, Task Deletion Safety, Priority Inversion Avoidance.
 Recursive mutexes can be locked and unlocked multiple times by the task that owns them.
 
-Siehe auch Abschnitt \ref{sec:semaphore_api}.
-
-
 \subsection{Synchronisation}
 
 \begin{center}
@@ -49,7 +46,6 @@ Unterschiedliche Kommunikationsmodelle möglich, wie One-Way Non-Interlocking un
 
 Queue Set ermöglicht einem RTOS Task simultan zu blockieren (pend) beim Lesezugriff auf
 mehrere RTOS Queues und/oder Semaphore (block on set, not on individual object).
-Siehe auch Abschnitt \ref{sec:message_queue}.
 
 
 \subsubsection{Signals}
